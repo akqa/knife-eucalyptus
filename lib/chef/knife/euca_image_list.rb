@@ -22,6 +22,10 @@ class Chef
   class Knife
     class EucaImageList < EucaBase
 
+      deps do
+        EucaBase.load_deps
+      end
+
       banner "knife euca image list (options)"
 
       def run

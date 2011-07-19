@@ -22,6 +22,10 @@ class Chef
   class Knife
     class EucaFlavorList < EucaBase
 
+      deps do
+        EucaBase.load_deps
+      end
+
       banner "knife euca flavor list (options)"
 
       def run

@@ -22,6 +22,10 @@ class Chef
   class Knife
     class EucaServerList < EucaBase
 
+      deps do
+        EucaBase.load_deps
+      end
+
       banner "knife euca server list (options)"
 
       def run
@@ -35,6 +39,7 @@ class Chef
           ui.color('Security Groups', :bold),
           ui.color('State', :bold)
         ]
+
         connection.servers.all.each do |server|
           server_list << server.id.to_s
           server_list << (server.dns_name || "" )

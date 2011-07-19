@@ -23,6 +23,7 @@ class Chef
     class EucaServerCreate < EucaBase
 
       deps do
+        EucaBase.load_deps
         require 'chef/knife/bootstrap'
         Chef::Knife::Bootstrap.load_deps
       end

@@ -22,6 +22,10 @@ class Chef
   class Knife
     class EucaServerDelete < EucaBase
 
+      deps do
+        EucaBase.load_deps
+      end
+
       banner "knife euca server delete SERVER_ID [SERVER_ID] (options)"
 
       def run
